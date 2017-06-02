@@ -1,0 +1,175 @@
+.site-header
+   +position(absolute, 0px null null null)
+   width: 100%
+   z-index: 100
+   
+   &.preload .header-container
+      .nav
+         opacity: 0
+         
+      .contact
+         opacity: 0
+   
+   &.page
+      +position(relative)
+      background-color: $bgcolor-alt
+   
+   .header-container
+      @extend .container
+      padding: .3rem 1rem
+      text-align: center
+      
+      .brand
+         margin: .6rem 0px
+         +display(inline-block)
+         
+         img
+            max-width: 450px
+            width: 100%
+            
+      .nav
+         opacity: 1
+         +transition(all .2s ease-out 0s)
+            
+         .nav-menu
+            list-style-type: none
+            padding: 0px
+            margin: 0px
+            
+            .nav-item
+               +display(inline-block)
+               padding: .5em
+                  
+               &.home
+                  +display(none)
+                     
+               &.contact
+                  +display(none)
+                     
+               &.current a
+                  color: $color-alt
+                  
+               a
+                  +display(block)
+                  color: $color-main
+                  text-transform: uppercase
+                  font-size: .85rem
+                  +transition(all .2s ease-in-out 0s)
+                     
+                  &:hover
+                     color: $color-alt
+                  
+      > .contact
+         margin: .6rem 0px
+         +display(flex)
+         +align-items(center)
+         +justify-content(center)
+         opacity: 1
+         +transition(all .2s ease-out 0s)
+            
+         *         
+            color: $color-main
+            font-weight: 300
+         
+         > *
+            margin: 0px 1rem
+                  
+         .social
+            +display(none)
+            width: auto
+            border:
+               width: 1px
+               style: solid
+               color: $color-main
+               radius: 50%
+            +transition(all .2s ease-in-out 0s)
+               
+            svg
+               padding: .3rem
+               fill: $color-main
+               +size(1.6rem)
+               +transition(all .2s ease-in-out 0s)
+                  
+            &:hover
+               border-color: $color-alt
+            
+               svg
+                  fill: $color-alt
+               
+@media screen and (min-width: 385px)
+   .site-header
+      .header-container
+         .nav .nav-menu .nav-item.contact
+            +display(inline-block)
+               
+@media screen and (min-width: 400px)   
+   .site-header
+      .header-container
+         > .contact
+            > *
+               margin: 0px .7rem
+         
+            .email:before
+               content: 'email: '
+            
+            .smart:before
+               content: 'smart: '
+
+            .social
+               +display(none)
+               
+@media screen and (min-width: 620px)
+   .site-header
+      .header-container
+         .nav
+            padding-right: .4rem
+            
+            .nav-menu
+               .nav-item
+                  padding: .3rem .5rem
+                     
+                  &.home
+                     +display(inline-block)
+
+         > .contact
+            > *
+               margin: 0px 1.5rem
+
+            .social
+               +display(block)
+               width: auto
+               border:
+                  width: 1px
+                  style: solid
+                  color: $color-main
+                  radius: 50%
+               +transition(all .2s ease-in-out 0s)
+
+               svg
+                  padding: .3rem
+                  fill: $color-main
+                  +size(1.6rem)
+                  +transition(all .2s ease-in-out 0s)
+
+               &:hover
+                  border-color: $color-alt
+
+                  svg
+                     fill: $color-alt
+            
+@media screen and (min-width: 992px)   
+   .site-header
+      .header-container
+         +display(flex)
+         +align-items(center)
+
+         .nav
+            +flex-grow(1)
+            text-align: right       
+                  
+         > .contact            
+            > *
+               margin: 0px
+            
+            .smart, .email
+               +display(none)

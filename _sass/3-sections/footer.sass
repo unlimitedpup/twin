@@ -1,0 +1,88 @@
+#site-footer
+   background-color: $bgcolor-alt
+   
+   .footer-container
+      @extend .container
+      text-align: center
+      
+      .brand
+         font-size: 2.5rem
+         font-weight: bold
+         text-transform: uppercase
+         color: $color-main
+            
+      .nav
+         margin: .6rem 0px
+            
+         .nav-menu
+            list-style-type: none
+            padding: 0px
+            margin: 0px
+            
+            .nav-item
+               +display(inline-block)
+               padding: .3rem .8rem
+                  
+               a
+                  +display(block)
+                  color: $color-main
+                  text-transform: uppercase
+                  font-size: .85rem
+                  +transition(all .2s ease-in-out 0s)
+                     
+                  &:hover
+                     color: $color-alt
+                  
+      .contacts
+         text-align: center
+         
+         > *
+            +display(inline-block)
+            color: $color-main
+            margin: 0px .5rem
+            font-weight: 300                           
+            
+         .social
+            border-radius: 50%
+            border: 1px solid $color-main
+            +size(2rem)
+            margin: 1rem auto
+            text-align: center
+            +transition(all .1s ease-in-out 0s)
+            padding: .15rem
+
+            svg
+               +transition(all .1s ease-in-out 0s)
+               fill: $color-main
+               +size(1rem)
+
+            &:hover
+               border-color: $color-alt
+
+               svg
+                  fill: $color-alt
+                  
+      .copyright
+         @extend .smaller
+         color: $color-main
+         
+         a
+            color: $color-main
+            font-weight: 300
+            border-bottom: 1px dotted transparent
+            
+            &:hover
+               border-bottom-color: rgba($color-main, .5)
+         
+@media screen and (min-width: 550px)
+   #site-footer
+      .footer-container
+         .contacts
+            > *
+               margin: 0px 2rem
+            
+            .smart:before
+               content: 'smart: '
+               
+            .email:before
+               content: 'email: '

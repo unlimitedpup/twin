@@ -1,0 +1,151 @@
+.tour-packages
+   
+   &.animate .tour-packages-container
+      .title
+         opacity: 0
+         
+      .article-wrapper
+         .article
+            opacity: 0
+            +transform(translateY(50px))
+            
+         > .cta
+            opacity: 0
+   
+   .tour-packages-container
+      @extend .container
+      
+      .article-wrapper
+         max-width: 350px
+         margin: 0px auto -2.5rem
+         
+         > .cta
+            @extend .big
+            text-transform: capitalize
+            opacity: 1
+            +transition(opacity .4s ease-in-out .5s)
+            +display(none)
+         
+         .article
+            opacity: 1
+            width: 100%
+            border: 1px solid lighten($border-color, 3)
+            padding: 1.5rem .7rem
+            margin-bottom: 2.5rem
+            +position(relative)
+            z-index: 1
+            text-align: center      
+            +transition(all .4s ease-in-out 0s)   
+            @for $i from 1 through 6
+               &:nth-child(#{$i})
+                  +transition-delay(.2s + (.1s * $i))
+            
+            &:before
+               content: ''
+               z-index: -1
+               +position(absolute, 0px 0px 0px 0px)
+               +transition(box-shadow .2s ease-in-out 0s)    
+            
+            .img
+               max-height: 200px
+               overflow: hidden
+               
+               img
+                  +size(100% auto)
+               
+            .star
+               margin-top: 1rem
+               
+               svg
+                  +display(inline-block)
+                  +size(1rem)
+                  margin: 0px 1px
+                  fill: $color-alt
+                  
+            h3
+               font-weight: 600
+               margin: .7rem 0px
+                              
+               
+            .transpo
+               +clearfix()
+               
+               .boat
+                  margin-bottom: 1rem
+                  
+                  span
+                     +display(none)
+                     @extend .small
+                  
+                  svg
+                     +size(1.4rem)
+               
+               > *
+                  width: 48%
+                  +display(inline-block)
+                  
+                  svg
+                     +size(2rem)
+                     fill: $text-color
+                     margin-right: 5px
+                     
+            .cta
+               +display(inline-block)
+               padding: .5rem 1rem
+               color: $color-main
+               background-color: $color-alt               
+               text-transform: uppercase
+               +transition(all .2s ease-in-out 0s)
+               
+               &:hover
+                  margin-top: -5px                 
+               
+            &:hover
+               &:before
+                  box-shadow: 0px 5px 20px 0px rgba(black, .2)
+            
+@media screen and (min-width: 768px)   
+   .tour-packages
+      .tour-packages-container
+         .article-wrapper    
+            max-width: none
+            +display(flex)
+            +flex-wrap(wrap)
+
+            .article
+               width: 47.5%
+               margin: 0px .5rem 1rem    
+            
+@media screen and (min-width: 992px)
+   .tour-packages
+      .tour-packages-container
+         .article-wrapper        
+            padding: .5rem 0px 2rem
+            border: 1px solid $border-color          
+            
+            > .cta
+               width: 150px
+               padding: .5rem 1rem
+               +display(block)
+               border: 2px solid $color-alt
+               margin: 2rem auto 0px
+               text-align: center
+
+               &:hover
+                  background-color: $color-alt
+               
+            .article
+               width: 31.4%   
+               margin: 0px .5rem 0px
+               
+               &.island-hopping
+                  +display(none) 
+            
+@media screen and (min-width: 1200px)
+   .tour-packages
+      .tour-packages-container
+         .article-wrapper                                   
+            .article
+               width: 31.75%   
+               
+   

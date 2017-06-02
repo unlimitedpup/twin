@@ -1,0 +1,120 @@
+.contact
+   .contact-container
+      @extend .container
+      
+      > a
+         +display(inline-block)
+         margin: 5px 5px 0px
+         border-bottom: 1px solid transparent
+         
+         &:hover
+            border-color: rgba($text-color, .3)
+      
+      .content-wrapper            
+         .text
+            a
+               font-weight: 300
+               
+         .form
+            margin-top: 2rem
+            
+            fieldset
+               padding: 0px
+               border: 0px
+               margin: 0px
+               
+               
+            label
+               width: 100%
+               margin-bottom: .6rem
+               +display(block)
+
+               span, input
+                  max-width: 350px
+                  +display(block)
+
+               span
+                  margin-bottom: 5px
+                  
+            input, textarea
+               border: 1px solid $border-color
+               padding: .4rem .6rem
+               border-radius: 3px
+               width: 100%
+                     
+            .message, .submit
+               width: 100%
+               margin: 0px
+               
+               input
+                  max-width: none
+               
+               textarea
+                  height: 9em
+                  resize: none
+                  
+               input[type='submit']
+                  @extend .huge
+                  margin-top: .5rem
+                  padding: .5rem 1rem .6rem
+                  border: 1px solid $border-color
+                  background-color: transparent
+                  text-transform: uppercase
+                  
+                  &:hover
+                     border-color: $color-alt
+                  
+            input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button-
+               -webkit-appearance: none
+               margin: 0px
+               
+            input:focus, select:focus, textarea:focus
+               outline: none
+               
+               
+      .map
+         margin-top: 2rem
+         border: 1px solid $border-color
+         padding: .7rem
+            
+         iframe
+            +display(block)
+            width: 100%
+            height: 400px
+            
+@media screen and (min-width: 992px)
+   .contact
+      .contact-container      
+         .content-wrapper
+            +clearfix()
+            
+            .text
+               float: left
+               
+            .form
+               margin: 0px
+               float: right
+               width: 600px
+            
+               fieldset
+                  margin: 0px -.6rem 1rem
+
+               label
+                  margin: 0px .6rem
+                  +display(inline-block)
+                  width: 29%
+                  
+                  input
+                     max-width: none
+         
+            
+@media screen and (min-width: 1200px)
+   .contact
+      .contact-container      
+         .content-wrapper
+            .form
+               width: 750px
+
+               label
+                  width: 30%
+         

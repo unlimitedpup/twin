@@ -1,0 +1,272 @@
+.post
+   &.many-itineraries
+      .post-container
+         padding-bottom: 0px
+      
+         ~ .post-container
+            padding: 1rem
+
+            &:last-of-type
+               padding-bottom: 3rem
+            
+         .itinerary-wrapper 
+            .package-name
+               @extend .large
+               padding: 1rem .5rem
+               margin-bottom: 0px
+               border-bottom: 1px solid $border-color
+               
+               svg
+                  fill: $color-alt
+                  +size(1.5rem)
+                  margin: -5px .3rem 0px
+      
+   .post-container
+      @extend .container
+      
+      &.single .content-wrapper
+         border-bottom: 1px solid $border-color
+      
+      .content-wrapper
+         border: 1px solid $border-color
+         border-bottom: 0px
+         padding: 1rem
+         
+         .img
+            margin-bottom: 1.5rem
+            
+            img
+               +size(100% auto)
+            
+         .text            
+            +clearfix()
+                  
+            > span
+               +display(block)
+               
+               &:last-of-type
+                  margin-bottom: 1.5rem
+               
+            .what-activity
+               +clearfix()
+               
+               .what, .activity
+                  width: 50%
+                  float: left
+                  
+                  p
+                     font-weight: 400
+                  
+                  span
+                     +display(block)
+                     margin: 0px 0px .2rem 1rem
+                        
+                     &.show
+                        +display(block)
+
+                     &.hidden
+                        +display(none)
+
+                     &.show-hidden
+                        +display(block)
+                        cursor: pointer
+                        @extend .small
+                        margin-top: .5rem
+                        color: $color-alt
+                        margin-right: 1.5rem
+                        font-weight: 400
+                        text-align: right
+
+                        &:hover:before
+                           content: '- '
+
+            .fee               
+               +clearfix()
+               width: 100%
+               margin-top: 1.5rem
+               
+               strong
+                  +display(block)
+                  width: 100%
+                  margin-bottom: .7rem
+                  
+               .boat svg
+                  +size(1.5rem)                  
+                  
+               p
+                  float: left
+                  width: 50%
+                  margin-bottom: .7rem
+                  
+                  span
+                     @extend .small
+                     
+                  svg                     
+                     fill: $color-alt
+                     +size(2rem)
+                     margin: -3px 5px 0px 0px
+                  
+      .itinerary-wrapper
+         border: 1px solid $border-color
+         border-bottom: 0px
+
+         .itinerary-item                     
+            &.active-itinerary               
+               .header
+                  border-bottom: 1px solid $border-color
+                  
+                  > span
+                     @extend .big
+                     margin: 0px
+                  
+               .body
+                  height: auto
+                  padding-top: 1rem
+                  padding-bottom: 1rem                  
+                  border-bottom: 1px solid $border-color
+                  
+            .header
+               background-color: lighten($border-color, 10)
+               padding: 5px 0px
+               cursor: pointer
+               +display(flex)
+                  
+               > span
+                  padding: .2rem 1rem
+                  font-weight: 400
+                  margin: 0px
+
+               .no
+                  +align-self(center)
+                  
+               .title
+                  border-left: 1px solid $border-color
+                  padding-right: 0px
+                  text-align: left
+                  width: 100%
+                  
+            .body
+               height: 0px
+               overflow: hidden
+               padding-left: 3.7rem
+               padding-right: 1rem
+               +transition(all 0s ease-in-out 0s)
+                  
+               &:last-of-type
+                  border-bottom: 1px solid $border-color
+               
+               .text
+                  +clearfix()
+                  margin-bottom: .5rem
+                     
+                  .desc
+                     margin-bottom: 1rem
+                  
+                  > div
+                     width: 50%
+                     float: left
+                     
+                     .sub-title
+                        font-weight: 400     
+                        
+                     span
+                        +display(block)
+                        margin: 0px 0px .2rem 1rem
+                        
+                        &.show
+                           +display(block)
+                        
+                        &.hidden
+                           +display(none)
+                              
+                        &.show-hidden
+                           +display(block)
+                           cursor: pointer
+                           @extend .small
+                           color: $color-alt
+                           margin-top: .5rem
+                           margin-right: 1.5rem
+                           font-weight: 400
+                           text-align: right
+                           
+                           &:hover:before
+                              content: '- '
+                        
+               .img                  
+                  img
+                     border: 1px solid $border-color
+                     +size(100% auto)
+                     
+@media screen and (min-width: 550px)
+   .post
+      .post-container       
+         .content-wrapper
+            padding: .7rem
+            +display(flex)
+            +align-items(flex-start)
+            
+            .img
+               +display(block)
+               +flex-shrink(1)
+               +size(325px auto)
+               overflow: hidden
+               border: 1px solid $border-color    
+               margin: 0px
+               
+               img
+                  +size(100% auto)
+                  min-width: 100%
+                  min-height: 100%
+                  
+            .text               
+               padding-left: .7rem
+               min-width: 310px
+               +flex-grow(1)       
+               +display(flex)
+               +flex-direction(column)
+               
+         .itinerary-wrapper
+            .itinerary-item            
+               .header
+                  > span
+                     +display(inline-block)
+
+               .body
+                  .img
+                     max-width: 400px
+                     width: 80%
+                     margin: 0px auto
+                     
+@media screen and (min-width: 992px)   
+   .post
+      .post-container
+         .content-wrapper            
+            .img
+               +size(450px 320px)
+               
+         .itinerary-wrapper
+            .itinerary-item            
+               .header
+                  > span
+                     padding: .5rem 1.5rem
+                     
+               .body
+                  +display(flex)
+                  +justify-content(space-between)
+                  padding-left: 5.25rem
+                  
+                  .text
+                     margin-right: 2rem
+                     margin-bottom: 0px
+                     width: 600px
+                     font-weight: 300
+                     
+                     > div
+                        width: 50%
+                     
+@media screen and (min-width: 1200px)   
+   .post
+      .post-container
+         .content-wrapper
+            .img
+               width: 500px

@@ -1,0 +1,126 @@
+.cool-facts
+   
+   &.animate
+      .cool-facts-container
+         .title
+            opacity: 0
+            
+         .article-wrapper .article .img
+            opacity: 0
+   
+   .cool-facts-container
+      @extend .container
+      
+      .article-wrapper
+         border: 1px solid $border-color
+         border-bottom: 0px            
+            
+         .article
+            height: 350px
+            text-align: left
+            overflow: hidden
+            +position(relative)
+            padding: .7rem
+            border-bottom: 1px solid $border-color     
+            @for $i from 1 through 10 
+               &:nth-child(#{$i}) .img
+                  +transition-delay(.2s + (.15s * $i))
+               
+            .img
+               overflow: hidden
+               height: 100%
+               opacity: 1
+               +transition(opacity .4s ease-in-out 0s)
+               border: 1px solid $border-color
+               
+               img
+                  +size(auto)
+                  min-width: 100%
+                  min-height: 100%
+            
+            .text
+               opacity: 0
+               +position(absolute, .7rem .7rem .7rem .7rem)
+               padding: 1rem
+               background-color: rgba(black, .7)
+               +transition(all .3s ease-in-out 0s)            
+               
+               h4, p
+                  color: $color-main
+                  opacity: 0
+                  +transition(all .3s ease-in-out 0s)
+                  vertical-align: top
+                  
+               h4
+                  color: $color-alt
+                     
+               p
+                  +transform(translate(0px, 30px))
+                  font-weight: 400
+                     
+               .loc-iti
+                  margin-top: 1.5rem
+
+                  .loc, .iti
+                     color: $color-main
+                     +display(block)
+                     margin: .5rem 0px
+
+                     svg
+                        fill: $color-alt
+                        +size(23px)
+                        margin-right: 5px
+               
+            &:hover .text
+               opacity: 1
+            
+               h4, p
+                  opacity: 1
+                  +transform(none)
+                     
+@media screen and (min-width: 550px)
+   .cool-facts
+      .cool-facts-container
+         .article-wrapper    
+            .article            
+               .text
+                  .loc-iti
+                     +clearfix()
+                     margin-top: 2.5rem
+                     
+                     .loc, .iti
+                        margin: 0px
+                     
+                     .loc
+                        float: left
+                        
+                     .iti
+                        float: right
+                     
+@media screen and (min-width: 600px)
+   .cool-facts
+      .cool-facts-container
+         .article-wrapper    
+            .article               
+               .text
+                  p
+                     padding-left: 1rem
+
+                     
+@media screen and (min-width: 992px)
+   .cool-facts
+      .cool-facts-container
+         .article-wrapper
+            +position(relative)
+            +display(flex)
+            +flex-wrap(wrap)
+            +justify-content(space-between)
+
+            &:before
+               content: ''
+               width: 1px
+               +position(absolute, 0px null 0px 50%)
+               background-color: $border-color
+
+            .article
+               width: 50%

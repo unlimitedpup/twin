@@ -1,0 +1,175 @@
+.slider
+   +position(relative)
+   overflow: hidden
+   background-color: rgba(black, .2)
+   
+   &.preload
+      .slide-container .slide-item .slide
+         opacity: 0
+         
+      .ctrl-prev, .ctrl-next, .thumb-container
+         opacity: 0
+         
+      &:hover
+         .ctrl-prev, .ctrl-next, .thumb-container
+            opacity: 0
+   
+   &:hover
+      .ctrl-prev, .ctrl-next, .thumb-container
+         opacity: 1
+   
+   .ctrl-prev, .ctrl-next
+      z-index: 2
+      +position(absolute, 50% null null null)
+      margin-top: -2rem
+      padding: .4rem
+      +transition(all .2s ease-out 0s)
+      cursor: pointer
+      opacity: .5
+      
+      svg
+         +size(1.7rem)
+         fill: $color-main
+         +transition(all .2s ease-out 0s)
+         
+      &:hover
+         background-color: rgba(black, .15)
+         border-color: rgba($color-main, .5)
+      
+         svg
+            fill: $color-alt         
+      
+   .ctrl-prev
+      left: 0px
+      border: 
+         width: 1px 1px 1px 0px
+         style: solid
+         color: rgba($color-main, .3)
+         radius: 0px 3px 3px 0px      
+      
+   .ctrl-next
+      right: 0px
+      border:
+         width: 1px 0px 1px 1px
+         style: solid
+         color: rgba($color-main, .3)
+         radius: 3px 0px 0px 3px      
+   
+   .thumb-container
+      +position(absolute, null 0px 1.3rem 0px)
+      z-index: 2
+      cursor: pointer
+      opacity: .5
+      text-align: center
+      +transition(all .2s ease-out 0s)
+         
+      .thumb-item
+         +size(27px 6px)
+         border-radius: 3px
+         margin: 0px 5px
+         +display(inline-block)
+         background-color: $color-main
+         
+         &.active-thumb
+            background-color: $color-alt
+   
+   .slide-container
+      height: 580px
+      +position(relative)
+      
+      .slide-item
+         padding: 16rem 3rem 0px
+         +position(absolute)
+         z-index: 1
+         +size(100%)
+         text-align: center
+         z-index: 1
+         background:
+            size: cover
+            position: center
+            repeat: no-repeat
+            
+         &.active-slide
+            opacity: 1
+            z-index: 2
+            
+            .slide
+               h1, h3
+                  text-shadow: 0px 0px 5px rgba(black, .5)
+               
+               h1, h3, .cta
+                  opacity: 1
+                  +transform(none)
+                     
+         &:after
+            content: ''
+            z-index: -1
+            background-color: rgba(black, .3)
+            +position(absolute, 0px 0px 0px 0px)
+      
+         .slide
+            +display(inline-block)
+            +transition(all .2s ease-out 0s)
+            opacity: 1
+            
+            > *
+               color: $color-main
+            
+            h1
+               text-transform: uppercase
+               +transform(translate(0px, 50px))
+               opacity: 0
+               +transition(all .3s ease-out 0s)
+               font-size: 1.8rem
+                  
+            h3, .cta
+               opacity: 0
+               +transition(all .3s ease-out .2s, background-color .2s ease-out 0s, border-color .2s ease-out 0s)
+                  
+            h3
+               margin: 1rem 0px 2.5rem
+               font-style: italic
+               font-size: 1.2rem
+               
+            .cta
+               font-size: 1.1rem
+               padding: .5rem 1.3rem .7rem
+               border: 2px solid #c3bea8
+               background-color: rgba(black, .1)
+               
+               &:hover
+                  background-color: $color-alt
+                  border-color: $color-alt
+         
+               
+@media screen and (min-width: 600px)
+   .slider   
+      .thumb-container .thumb-item
+         width: 33px
+         
+      .slide-container
+         .slide-item
+            .slide
+               .cta
+                  padding: .6rem 1.8rem .8rem
+                  font-size: 1.3rem
+               
+@media screen and (min-width: 992px)  
+   .slider   
+      .ctrl-prev, .ctrl-next
+         margin-top: -2rem
+         padding: .5rem
+
+         svg
+            +size(2.1rem)   
+         
+      .slide-container
+         .slide-item
+            padding-top: 14rem
+         
+            .slide
+               h1
+                  font-size: 2.5rem
+                  
+               h3
+                  font-size: 1.5rem

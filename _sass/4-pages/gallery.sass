@@ -1,0 +1,49 @@
+.gallery
+   .gallery-container
+      padding: 4rem 1.5rem
+      .content-wrapper
+         +display(flex)
+         +flex-wrap(wrap)
+         +align-items(flex-start)
+         +justify-content(space-between)
+         margin-bottom: -1.5rem   
+            
+         .img
+            border: 1px solid $border-color
+            padding: 5px
+            +size(100% auto)
+            max-width: 350px
+            margin: 0px auto 1.5rem
+            
+            img
+               cursor: pointer
+               +size(100% auto)
+            p
+               margin: .7rem 0px
+               @extend .small
+               text-align: center
+                  
+               a
+                  color: $color-alt
+                  border-bottom: 1px dotted $color-alt
+                  
+@media screen and (min-width: 650px)
+   .gallery
+      .gallery-container
+         .content-wrapper
+            .img
+               width: 48%
+                  
+@media screen and (min-width: 910px)
+   .gallery
+      .gallery-container
+         .content-wrapper
+            .img
+               width: 31%
+                  
+@media screen and (min-width: 1200px)
+   .gallery
+      .gallery-container
+         .content-wrapper
+            .img
+               width: 23%

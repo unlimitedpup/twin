@@ -1,0 +1,47 @@
+.payments
+   .payments-container
+      @extend .container
+         
+      .steps
+         margin-bottom: 1.5rem
+         
+         h4
+            margin-bottom: 1rem
+
+      .payment
+         border: 1px solid $border-color
+         padding: .5rem
+
+         .img
+            max-width: 300px
+            padding: .7rem
+            border: 1px solid lighten($border-color, 3)  
+            
+            img
+               +size(100% auto)
+
+         .text
+            margin-top: .5rem
+         
+@media screen and (min-width: 550px)
+   .payments
+      .payments-container
+         .payment
+            +display(flex)
+               
+            .img
+               width: 300px
+               +order(0)   
+               
+            .text
+               +order(1)
+               margin-left: 1rem
+               
+   
+@media screen and (min-width: 768px)
+   .payments
+      .payments-container
+         .payment
+            
+            .text
+            
