@@ -36,6 +36,17 @@ function imgLightbox() {
          $('.img-lb').remove();
       })
    });
+   
+   $('.gallery-wrapper img').click( function() {
+      var $this = $(this),
+          imgUrl = $this.attr('src'),
+          imgLb = "<div class='img-lb animate'><div class='img-lb-container'><span class='close-lb'></span><figure class='img'><img src='"+imgUrl+"' alt='Twin Travel Bohol'></figure></div></div>";
+      
+      $('body').append(imgLb);
+      $('body').on('click', '.close-lb', function() {
+         $('.img-lb').remove();
+      })
+   })
 }
 
 function animate() {
