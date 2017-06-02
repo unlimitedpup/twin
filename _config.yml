@@ -1,6 +1,6 @@
 markdown: kramdown
 permalink: pretty
-baseurl: '/work'
+baseurl: ''
 
 collections: 
  tour-packages:
