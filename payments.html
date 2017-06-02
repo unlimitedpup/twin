@@ -1,0 +1,29 @@
+---
+layout: default
+title: Payment Method
+meta: 'bohol day tour, bohol tour packages,bohol day tours,countryside tour,chocolate hills,tarsier,loboc river cruise,buget bohol tours,dolphin and whale watching,panglao tour'
+---
+
+<section class='payments'>
+   <section class='payments-container'>
+      <h3 class='page-title'>{% include icons/payments.html %}{{ page.title }}</h3>
+      <div class='steps'>            
+         <h4>4 steps how to advance payment in {{ site.data.settings.title | upcase }}</h4>
+         <p>1. Choose which payment method you pay.</p>
+         <p>2. Go to the nearest Remitance Branch.</p>
+         <p>3. Pay the amount</p>
+         <p>4. We will notify you within a minute. Please always check your phone or email regularly. God Bless.</p>
+      </div>
+
+      <div class='payment'>
+         <div class='text'>
+            <p><strong>Receiver	: </strong>{{ site.data.settings.owner }}</p>
+            <p><strong>Address	: </strong>{{ site.data.settings.address }}</p>
+            <p><strong>Mobile Number : </strong>{{ site.data.settings.smart }}</p>
+         </div>
+         <figure class='img'>
+            <img src='{{ site.baseurl }}/assets/img/payments.jpg'>
+         </figure>         
+      </div>
+   </section>   
+</section>

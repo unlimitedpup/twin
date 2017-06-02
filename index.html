@@ -1,0 +1,67 @@
+---
+layout: default
+title: Twin Travel Tours and Travel
+meta: 'affordable,bohol accomodation,bohol tours,bohol travel,bohol travel tours,bohol tours travel,bohol tourist spots,bohol tour packages,bohol countryside tour,bohol package tour promo,bohol package tour promo 2017,bohol tour package,bohol package tour,bohol countryside tour, panglao island hopping,panglao island tour,bohol island tour,bohol island travel,island,bohol,philippines'
+---
+
+<section class='slider preload'>
+   <section class='slide-container'>
+      {% for slide in site.data.slide %}
+      <div class='slide-item{% if forloop.first %} active-slide{% endif %}' style="background-image: url('{{ site.baseurl }}/assets/img/slider/{{ slide.name }}.jpg')">
+         <div class='slide'>
+            <h1>{{ slide.quote }}</h1>
+            <h3>{{ slide.author }}</h3>
+            <a class='cta' href='{{ site.baseurl }}/contact'>Contact us now</a>
+         </div>
+      </div>    
+      {% endfor %}
+   </section>
+   <section class='thumb-container'>
+      {% for thumb in site.data.slide %}
+      <div class='thumb-item{% if forloop.first %} active-thumb{% endif %}'>
+      </div>
+      {% endfor %}
+   </section>   
+   
+   <div class='ctrl-prev'>
+      {% include icons/prev.html %}   
+   </div>
+   <div class='ctrl-next'>
+      {% include icons/next.html %}
+   </div>   
+</section>
+
+<section class='tour-packages animate'>
+   <section class='tour-packages-container'>
+      <h2 class='title'>Let us help you package your holiday<br>experience from these destinations & more.</h2>
+      <section class='article-wrapper'>
+         {% for post in site.tour-packages limit:4 %}
+            {% include tour-packages.html %}
+         {% endfor %}         
+         <a class='cta' href='{{ site.baseurl }}/tour-packages/'>See all</a>
+      </section>
+   </section>
+</section>
+
+<section class='cool-facts animate'>
+   <section class='cool-facts-container'>
+      <h2 class='title'>Cool Facts</h2>
+      <section class='article-wrapper'>
+         {% for post in site.data.settings.cool-facts %}
+         <article class='article'>
+            <figure class='img'>
+               <img src="{{ site.baseurl }}/assets/img/{{ post.img }}">
+            </figure>
+            <div class='text'>
+               <h4>{{ post.name }}</h4>
+               <p>{{ post.description }}</p>
+               <div class='loc-iti'>
+                  <strong class='loc'>{% include icons/loc.html %} {{ post.loc }}</strong>
+                  <strong class='iti'>{% include icons/iti.html %} {{ post.iti }}</strong>
+               </div>
+            </div>
+         </article>
+         {% endfor %}
+      </section>
+   </section>
+</section>

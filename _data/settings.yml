@@ -1,0 +1,23 @@
+title: Twin Travel Bohol
+owner: Judelyn J. Bantol
+address: Tagbilaran City, Bohol, Philippines
+email: jjbantol@gmail.com
+smart: +63 921 558 9697
+map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31466.886979652292!2d123.85708826957178!3d9.650174007850374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa4c2de9a474d3%3A0x37199ca88b92f934!2sDampas%2C+Tagbilaran+City%2C+Bohol%2C+Philippines!5e0!3m2!1sen!2ssg!4v1496083171924'
+
+facebook: 'https://www.facebook.com/Twins-travel-1403521429678221/'
+
+menu:
+ - {name: 'home', link: '/'}
+ - {name: 'tour packages', link: '/tour-packages/'}
+ - {name: 'gallery', link: '/gallery/'}
+ - {name: 'payments', link: '/payments/'}
+ - {name: 'contact', link: '/contact/'}
+
+cool-facts:
+- {name: Blood Compact, loc: 'Tagbilaran City', description: 'The Blood Compact Site commemorates the first treaty of friendship between the white and brown races. Spanish conquistador Miguel Lopez de Legazpi and local chieftain Rajah Sikatuna sealed the treaty by drinking wine mixed with blood, thus it was called the "Blood Compact" or "Sandugo."', iti: 'Country Side Tour & Danao Tour', img: 'blood-compact.jpg'}
+- {name: Baclayon Church (Plus Museum), loc: 'Baclayon', description: 'Built in the 16th century, shortly after the arrival of the Spaniards, Baclayon Church is one of the oldest stone churches in the Philippines. Religious relics and cultural artifacts can be seen in this historical landmark.', iti: 'Country Side Tour & Danao Tour', img: 'baclayon-church.jpg'}
+- {name: Python, loc: 'Baclayon', description: 'Do you know that the largest python in captivity can be found in Bohol? A 25-feet long python named Prony can be found in the town of Baclayon. Prony is considered as a harmless pet by its owner and is fed once a month.', iti: 'Country Side Tour & Danao Tour', img: 'python-sanctuary.jpg'}
+- {name: Loboc Tarsier, loc: 'Loboc', description: 'The tarsier is widely considered as the worlds smallest primate and is also deemed as an endangered species. With its large eyes, the tarsier hunts small insects for food and climbs from tree to tree.', iti: 'Country Side Tour', img: 'loboc-tarsier.jpg'}
+- {name: Loboc River Cruise and Floating Restaurant, loc: 'Loboc', description: 'Be mystified and captivated by the enchanting Loboc River Cruise. Take a ride on one of the floating restaurants and treat yourself to an afternoon of relaxation and enjoyment, along with a sumptuous lunch and traditional local music.', iti: 'Country Side Tour', img: 'loboc-river-cruise.jpg'}
+- {name: Butterfly Conservation Center, loc: 'Bilar', description: 'Home to hundreds of preserved and live butterflies, the Butterfly Conservation Center gives you a glimpse of the countrys diverse butterfly and moth species. Here you will discover the different stages of a butterflys development', iti: 'Country Side Tour', img: 'butterfly-conservation.jpg'}

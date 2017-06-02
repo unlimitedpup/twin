@@ -1,0 +1,24 @@
+<article class="article {{ post.title | downcase | replace: ' ', '-'}}">
+   <figure class='img'>
+      <img src="{{ site.baseurl }}/assets/img/{{ post.title | downcase | replace: ' ', '-' }}.jpg">
+   </figure>
+   <div class='star'>
+      {% include icons/star.html %}
+      {% include icons/star.html %}
+      {% include icons/star.html %}
+      {% include icons/star.html %}
+      {% include icons/star.html %}
+   </div>
+   <h3>{{ post.title }}</h3>
+   <div class='transpo'>
+      {% for trans in post.transportation limit:2 %}
+      <h5 class='{{ trans.name }}'>{% include icons/{{ trans.name }}.html %} P {{ trans.price }}</h5>
+      {% endfor %}   
+      {% if post.title == 'Side Trip Tour' %}
+      {% for item in post.side-trip-tour limit:1 %}
+      <h5>{{ item.name }}</h5> 
+      {% endfor %}
+      {% endif %}
+   </div>            
+   <a class='cta' href='{{ site.baseurl }}{{ post.url }}'>show more</a>
+</article>    

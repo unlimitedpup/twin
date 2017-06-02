@@ -1,0 +1,29 @@
+<footer id='site-footer'>
+   <section class='footer-container'>
+      <div class='brand'><span class='alt-color'>twin</span> travel bohol</div>
+      <nav class='nav'>
+         <ul class='nav-menu'>
+            <li class='nav-item'><a href='{{ site.baseurl }}/tour-packages'>Tour Packages</a></li>
+            <li class='nav-item'><a href='{{ site.baseurl }}/gallery'>Gallery</a></li>
+            <li class='nav-item'><a href='{{ site.baseurl }}/payments'>Payments</a></li>
+            <li class='nav-item'><a href='{{ site.baseurl }}/contact'>Contacts</a></li>
+         </ul>
+      </nav>
+      <div class='contacts'>
+         <a class='smart' href='tel:{{ site.data.settings.smart }}'>{{ site.data.settings.smart }}</a>
+         <a class='social' href='{{ site.data.settings.facebook }}' target='_blank'>{% include icons/fb.html %}</a>         
+         <a class='email' href='mailto:{{ site.data.settings.email }}'>{{ site.data.settings.email }}</a>        
+      </div>
+      <div class='copyright'>© Copyright 2017 Twin Travel Bohol. Designed by <a href='https://www.facebook.com/aedesignbohol/' target='_blank'>AEDesign</a></div>
+   </section>
+</footer>
+
+<script>
+   siteUrl = '{{ site.url }}';
+   siteEmail = '{{ site.data.settings.email }}';
+</script>
+
+<script src='{{site.baseurl}}/assets/js/jquery-3.1.1.min.js'></script>
+<script src='{{site.baseurl}}/assets/js/functions.js'></script>
+</body>   
+</html>

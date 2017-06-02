@@ -1,0 +1,45 @@
+---
+layout: default
+title: Contact Us
+meta: 'bohol package tour, bohol tours, bohol travel, bohol tourism, bohol resorts, bohol hotels, cheap bohol tour, affordable tours in bohol, bohol tour packages, cheap bohol day tour, cheap bohol tours, cheap bohol travel deals, cheap bohol trip, cheap car for hire in bohol, car for hire in bohol, bohol, cheap bohol tour packages, cheap bohol accommodation, cheapest bohol accomodation, bohol package tour promo, bohol package deal, cheap bohol package deal, cheapest bohol package deal, cheapest bohol package country side tour, bohol package tour, bohol tour package, bohol package tour promo, cheap bohol tour package, bohol tourist spots, bohol day tour, bohol tours, car for hire in bohol, tagbilaran travel, tagbilaran travel and tour, travel in bohol, van for hire, cheap bohol package tour 2013'
+---
+
+<section class='contact'>
+   <section class='contact-container'>
+      <h3 class='page-title'>{% include icons/contact.html %}{{ page.title }}</h3>
+      <section class='content-wrapper'>
+         <div class='text'>
+            <p><strong>Smart: </strong><a href='tel:{{ site.data.settings.smart }}'>{{ site.data.settings.smart }}</a></p>   
+            <p><strong>Email: </strong><a href='mailto:{{ site.data.settings.email }}'>{{ site.data.settings.email }}</a></p>
+         </div>
+         <form class='form' method='POST' action='https://formspree.io/{{ site.data.settings.email }}'>
+            <h5>Send to us your concern</h5>
+            <fieldset class='info'>
+               <label>
+                  <span>Name*</span>
+                  <input type='text' name='name' required>
+               </label>
+               <label>
+                  <span>Email*</span>
+                  <input type='email' name='email'>
+               </label>
+               <label>
+                  <span>Phone*</span>
+                  <input type='number' name='phone'>
+               </label>
+            </fieldset>
+            <label class='message'>
+               <span>Message*</span>
+               <textarea type='text' name='message' required></textarea>
+            </label>
+            <label class='submit'>
+               <input type='submit' value='submit'>
+            </label>
+         </form>
+      </section>
+      <section class='map'>
+         <iframe src='{{ site.data.settings.map }}' frameborder="0" allowfullscreen=""></iframe>   
+      </section>            
+      <a href='{{ site.data.settings.map }}' target='_blank'>Click here to view in full screen</a>
+   </section>   
+</section>

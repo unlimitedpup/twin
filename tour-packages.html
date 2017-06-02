@@ -1,0 +1,16 @@
+---
+layout: default
+title: Tour Packages
+meta: 'cheap, affordable bohol package tour, bohol package tour Promo 2017, bohol tour package, bohol tour packages, Panglao 3D/2N accommodation, bohol countryside tour, panglao island hopping, panglao island tour, danao adventure tour, bohol island, philippines'
+---
+
+<section class='tour-packages page'>
+   <section class='tour-packages-container'>
+      <h3 class='page-title'>{% include icons/tour.html %}{{ page.title }}</h3>
+      <section class='article-wrapper'>
+         {% for post in site.tour-packages %}
+            {% include tour-packages.html %}
+         {% endfor %}
+      </section>      
+   </section>
+</section>

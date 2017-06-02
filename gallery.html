@@ -1,0 +1,18 @@
+---
+layout: default
+title: Gallery
+meta: 'Bohol trip blog, Bohol tour blog, Bohol travel blog, things to do in bohol, Bohol Itinerary, Bohol budget, how to get to Bohol, Bohol ferry schedule 2017'
+---
+
+<section class='gallery'>
+   <section class='gallery-container'>
+      <section class='content-wrapper'>
+         {% for item in site.data.gallery %}
+         <figure class='img'>
+            <img src='{{ site.baseurl }}/assets/img/gallery/{{ item.name }}.jpg' data-loc='{{ item.spot }}'>
+            <p>- Located in <span class='alt-color'>{{ item.spot }}</span> -</p>
+         </figure>         
+         {% endfor %}
+      </section>   
+   </section>
+</section>

@@ -1,0 +1,169 @@
+---
+layout: default
+---
+ 
+<section class="post {% if page.title contains 'Island Hopping' %}many-itineraries{% endif %}">
+   {% if page.title != 'Side Trip Tour' %}
+   <section class='post-container'>
+      <section class='content-wrapper'>
+         <figure class='img'>
+            <img src="{{ site.baseurl }}/assets/img/{{ page.title | downcase | replace: ' ', '-'}}.jpg">
+         </figure>
+         <div class='text'>
+            <h3>{{ page.title }}</h3>    
+            <div class='fee'>
+               <strong>Transportation Fee:</strong>
+               {% for trans in page.transportation %}
+               <p class='{{ trans.name }}'>{% include icons/{{ trans.name }}.html %}P {{ trans.price }}</p>
+               {% endfor %}
+            </div>
+         </div>
+      </section>   
+      
+      <section class='itinerary-wrapper'>  
+      {% for item in page.itinerary %}
+      {% assign itiNum = itiNum | plus: 1 %}
+      {% assign whatNo = 0 %}
+      {% assign actNo = 0 %}
+         <section class='itinerary-item{% if forloop.first %} active-itinerary{% endif %}'>
+            <header class='header'><span class='no'>{{ itiNum }}</span><span class='title'>{{ item.prev-spot }} - <span>{{ item.spot }}{% if item.after-spot %} {{ item.after-spot }}{% endif %}</span></span></header>
+            <section class='body'>
+               <div class='text'>
+                  {% if item.desc %}<p class='desc'> {{ item.desc }}</p>{% endif %}
+                  <div class='what'>
+                     <p class='sub-title'>What's here?</p>
+                     {% if item.what %}
+                     {% for what in item.what %}
+                     {% assign whatNo = whatNo | plus:1 %}
+                     <span{% if whatNo >= 8 %} class='show hidden'{% endif %}>- {{ what }}</span>        
+                     {% endfor %}
+                     {% if whatNo > 7 %}<span class='show-hidden'>see all</span>{% endif %}
+                     {% else %}                     
+                     <span>- none</span>
+                     {% endif %}
+                  </div>
+                  <div class='activity'>
+                     <p class='sub-title'>Activity?</p>
+                     {% if item.activity %}
+                     {% for activity in item.activity %}
+                     {% assign actNo = actNo | plus:1 %}
+                     <span{% if actNo >= 8 %} class='show hidden'{% endif %}>- {{ activity }}</span>
+                     {% endfor %}
+                     {% if actNo > 7 %}<span class='show-hidden'>see all</span>{% endif %}
+                     {% else %}
+                     <span>- coming soon</span>
+                     {% endif %}
+                  </div>
+               </div>
+               <figure class='img'>
+                  <img src="{{ site.baseurl }}/assets/img/{{ item.spot | downcase | replace: ' ', '-' }}.jpg">
+               </figure>
+            </section>
+         </section>
+      {% endfor %}      
+      </section>   
+   </section>
+   {% endif %}
+   
+   {% if page.title == 'Side Trip Tour' %}
+   <section class='post-container single'>
+      {% for item in page.side-trip-tour %}
+      {% assign whatNo = 0 %}
+      {% assign actNo = 0 %}
+      <section class='content-wrapper'>
+         <figure class='img'>
+            <img src="{{ site.baseurl }}/assets/img/{{ item.name | downcase | replace: ' ', '-'}}.jpg">
+         </figure>
+         <div class='text'>
+            <h3>{{ item.name }}</h3>  
+            <span><strong>What:</strong> {{ item.type }}</span>
+            <span><strong>Where:</strong> {{ item.loc }}</span>
+            <div class='what-activity'>
+               <div class='what'>
+                  <p>What's here?</p>
+                  {% if item.what %}
+                  {% for what in item.what %}
+                  {% assign whatNo = whatNo | plus:1 %}
+                  <span{% if whatNo >= 3 %} class='show hidden'{% endif %}>- {{ what }}</span>        
+                  {% endfor %}
+                  {% if whatNo > 2 %}<span class='show-hidden'>see all</span>{% endif %}
+                  {% else %}                     
+                  <span>- none</span>
+                  {% endif %}            
+               </div>
+               <div class='activity'>
+                  <p>Activity?</p>
+                  {% if item.activity %}
+                  {% for activity in item.activity %}
+                  {% assign actNo = actNo | plus:1 %}
+                  <span{% if actNo >= 3 %} class='show hidden'{% endif %}>- {{ activity }}</span>
+                  {% endfor %}
+                  {% if actNo > 2 %}<span class='show-hidden'>see all</span>{% endif %}
+                  {% else %}
+                  <span>- coming soon</span>
+                  {% endif %}            
+               </div>  
+            </div>
+            <div class='fee'>
+               <strong>Transportation Fee:</strong>
+               {% for trans in item.transportation %}
+               <p class='{{ trans.name }}'>{% include icons/{{ trans.name }}.html %}P {{ trans.price }}</p>
+               {% endfor %}
+            </div>
+         </div>
+      </section>  
+      {% endfor %}
+   </section>  
+   {% endif %}       
+      
+   {% if page.itineraries %}
+   {% for itiItem in page.itineraries %}
+   <section class='post-container'>
+      <section class='itinerary-wrapper'>  
+      <div class='package-name'>{% include icons/star.html %} {{ itiItem.name }}</div>
+      {% for item in itiItem.itinerary %}
+      {% assign itiNum = itiNum | plus: 1 %}  
+      {% assign whatNum = 0 %}
+      {% assign actNum = 0 %}
+         <section class="itinerary-item{% if forloop.first %} active-itinerary{% endif %}">
+            <header class='header'><span class='no'>{{ itiNum }}</span><span class='title'>{{ item.prev-spot }} - <span>{{ item.spot }}{% if item.after-spot %} {{ item.after-spot }}{% endif %}</span></span></header>
+            <section class='body'>
+               <div class='text'>
+                  {% if item.desc %}<p class='desc'> {{ item.desc }}</p>{% endif %}
+                  <div class='what'>
+                     <p class='sub-title'>What's here?</p>
+                     {% if item.what %}
+                     {% for what in item.what %}
+                     {% assign whatNum = whatNum | plus:1 %}
+                     <span{% if whatNum >= 8 %} class='show hidden'{% endif %}>- {{ what }}</span>        
+                     {% endfor %}
+                     {% if whatNum > 7 %}<span class='show-hidden'>see all</span>{% endif %}
+                     {% else %}                     
+                     <span>- none</span>
+                     {% endif %}
+                  </div>
+                  <div class='activity'>
+                     <p class='sub-title'>Activity?</p>
+                     {% if item.activity %}
+                     {% for activity in item.activity %}
+                     {% assign actNum = actNum | plus:1 %}
+                     <span{% if actNum >= 8 %} class='show hidden'{% endif %}>- {{ activity }}</span>
+                     {% endfor %}
+                     {% if actNum > 7 %}<span class='show-hidden'>see all</span>{% endif %}
+                     {% else %}
+                     <span>- coming soon</span>
+                     {% endif %}
+                  </div>
+               </div>
+               <figure class='img'>
+                  <img src="{{ site.baseurl }}/assets/img/{{ item.spot | downcase | replace: ' ', '-' }}.jpg">
+               </figure>
+            </section>
+         </section>
+      {% endfor %}
+      {% assign itiNum = 0 %}
+      </section>
+   </section>
+   {% endfor %}
+   {% endif %}
+</section>

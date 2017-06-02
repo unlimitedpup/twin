@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <title>{% if page.exclude %}{{ page.title }}{% else %}{{ page.title }} · {% if page.category == 'services' %}{{ page.category | capitalize }} · {% elsif page.category == 'ticketing' %}{{ page.category | capitalize }} · Services · {% endif %}{{ site.data.settings.title }}{% endif %}</title>
+   <meta charset='utf-8'>
+   <meta name='description' content='{{ page.title }}'>
+   <meta name='keywords' content='{{ page.meta }}'>
+   <meta name='author' content='{{site.data.settings.author}}'>
+   <meta name='dcterms.rightHolder' content='{{site.url}}'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <link rel='cannonical' href="{{site.url}}{{page.url | replace: 'index.html' , ''}}">
+   <link rel='stylesheet' href='{{site.baseurl}}/assets/css/main.css' type='text/css'>
+   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+   <link rel='shortcut icon' href='{{site.baseurl}}/favicon.ico'>   
+</head>
+<body id='main'>
+<header class="site-header {% if page.url != '/' %}page{% endif %} {% if page.url == '/' %}preload{% endif %}">
+   <section class='header-container'>      
+      <a class='brand' href='{{ site.baseurl }}'><img src='{{ site.baseurl }}/assets/img/banner.png'></a>
+      <nav class='nav'>
+         <ul class='nav-menu'>
+            <li class="nav-item home{% if page.url contains 'home' %} current{% endif %}"><a href='{{ site.baseurl }}/'>Home</a></li>
+            <li class="nav-item {% if page.url contains 'tour' %} current{% endif %}"><a href='{{ site.baseurl }}/tour-packages'>Tour Packages</a></li>
+            <li class="nav-item {% if page.url contains 'gallery' %} current{% endif %}"><a href='{{ site.baseurl }}/gallery'>Gallery</a></li>
+            <li class="nav-item {% if page.url contains 'payments' %} current{% endif %}"><a href='{{ site.baseurl }}/payments'>Payments</a></li>
+            <li class="nav-item contact{% if page.url contains 'contact' %} current{% endif %}"><a href='{{ site.baseurl }}/contact'>Contact Us</a></li>
+         </ul>
+      </nav>
+      <div class='contact'>         
+         <a class='smart' href='tel:{{ site.data.settings.smart }}'>{{ site.data.settings.smart }}</a>
+         <a class='social' href='{{ site.data.settings.facebook }}' target='_blank'>{% include icons/fb.html %}</a>
+         <a class='email' href='mailto:{{ site.data.settings.email }}'>{{ site.data.settings.email }}</a>
+      </div>
+   </section>
+</header>
