@@ -26,6 +26,26 @@
       
       &.single .content-wrapper
          border-bottom: 1px solid $border-color
+         
+      .gallery-wrapper
+         padding: 0px calc(.7rem - 2px) .7rem
+         border-left: 1px solid $border-color
+         border-right: 1px solid $border-color
+         +clearfix()
+         
+         .img
+            float: left
+            width: 49.3%
+            margin: 0px 1px 1px
+            overflow: hidden
+            cursor: pointer
+            border: 1px solid $border-color
+            
+            img
+               +size(100% auto)
+               
+            &:nth-child(4) ~ *
+               +display(none)
       
       .content-wrapper
          border: 1px solid $border-color
@@ -240,6 +260,11 @@
 @media screen and (min-width: 992px)   
    .post
       .post-container
+         .gallery-wrapper
+            .img
+               margin: 0px 1px
+               width: 228px
+            
          .content-wrapper            
             .img
                +size(450px 320px)
@@ -266,7 +291,12 @@
                      
 @media screen and (min-width: 1200px)   
    .post
-      .post-container
+      .post-container         
+         .gallery-wrapper
+            .img
+               margin: 0px 2px
+               width: 274px
+                  
          .content-wrapper
             .img
                width: 500px
