@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Danao Tour
+gallery-name: Danao Adventure Park
 transportation:
  - name: car
    price: '3,500'

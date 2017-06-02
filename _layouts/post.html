@@ -18,7 +18,17 @@ layout: default
                {% endfor %}
             </div>
          </div>
-      </section>   
+      </section>  
+      
+      {% if page.gallery-name %}
+      <section class='gallery-wrapper'>
+      {% for item in site.data.gallery %}
+      {% if item.spot == page.gallery-name %}
+         <figure class='img'><img src='{{ site.baseurl }}/assets/img/gallery/{{ item.name }}.jpg'></figure>
+      {% endif %}
+      {% endfor %}
+      </section>        
+      {% endif %}
       
       <section class='itinerary-wrapper'>  
       {% for item in page.itinerary %}
