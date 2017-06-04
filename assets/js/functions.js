@@ -150,10 +150,10 @@ function sendQuote() {
             message: $("[name='message']").val(),
          },
          dataType: 'json'
-      }).done( 
+      }).done( function () {
          alert('Message Submitted, Thank you and God Bless');
-      ).fail( 
+      }).fail(  function () {
          alert('Message not Submitted, try use our contact information in the left, thank you');
-      )
-   })
+      });
+   });
 }
