@@ -56,6 +56,10 @@ function animate() {
       $('.tour-packages').removeClass('animate');
    }
    
+   if ( trigAnimate > $('.site-desc').offset().top ) {
+      $('.site-desc').removeClass('animate');
+   }
+   
    if ( trigAnimate > $('.cool-facts').offset().top ){
       $('.cool-facts').removeClass('animate');
    }
@@ -150,10 +154,10 @@ function sendQuote() {
             message: $("[name='message']").val(),
          },
          dataType: 'json'
-      }).done( function () {
+      }).done( function() {
          alert('Message Submitted, Thank you and God Bless');
-      }).fail(  function () {
+      }).fail( function() {
          alert('Message not Submitted, try use our contact information in the left, thank you');
-      });
-   });
+      })
+   })
 }
