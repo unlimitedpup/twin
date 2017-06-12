@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Danao Tour
+desc: "Danao Tour consists of the site of the 'sea of clouds', you are on the top of the mountain where you can see the morning clouds underneath look like a sea and to the Danao Eco-Adventure Park wherein varoius high adrenaline activities await you."
 gallery-name: Danao Adventure Park
 transportation:
  - name: car

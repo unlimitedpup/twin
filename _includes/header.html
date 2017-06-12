@@ -3,14 +3,14 @@
 <head>
    <title>{% if page.exclude %}{{ page.title }}{% else %}{{ page.title }} · {% if page.category == 'services' %}{{ page.category | capitalize }} · {% elsif page.category == 'ticketing' %}{{ page.category | capitalize }} · Services · {% endif %}{{ site.data.settings.title }}{% endif %}</title>
    <meta charset='utf-8'>
-   <meta name='description' content='{{ page.title }}'>
+   <meta name='description' content="{{ page.title }}{% if page.desc %} · {{ page.desc }}{% endif %}">
    <meta name='keywords' content='{{ page.meta }}'>
-   <meta name='author' content='{{site.data.settings.author}}'>
+   <meta name='author' content='{{site.data.settings.owner}}'>
    <meta name='dcterms.rightHolder' content='{{site.url}}'>
    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
    <link rel='cannonical' href="{{site.url}}{{page.url | replace: 'index.html' , ''}}">
    <link rel='stylesheet' href='{{site.baseurl}}/assets/css/main.css' type='text/css'>
-   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+   <!--<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">-->
    <link rel='shortcut icon' href='{{site.baseurl}}/favicon.ico'>   
 </head>
 <body id='main'>

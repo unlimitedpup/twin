@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Anda Tour
+desc: "Anda Tour is on the southern part of Bohol.You will explore to the whute sand beaches, caves and rock formations at La Manok Island."
 transportation:
  - name: car
    price: '3,500'

@@ -10,7 +10,8 @@ layout: default
             <img src="{{ site.baseurl }}/assets/img/{{ page.title | downcase | replace: ' ', '-'}}.jpg">
          </figure>
          <div class='text'>
-            <h3>{{ page.title }}</h3>    
+            <h3>{{ page.title }}</h3>   
+            {% if page.desc %}<p>{{ page.desc }}</p>{% endif %}
             <div class='fee'>
                <strong>Transportation Fee:</strong>
                {% for trans in page.transportation %}

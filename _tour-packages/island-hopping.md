@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Island Hopping
+desc: "The island hopping features whale watching early in the morning, you can find many whales swimming between sea of Bohol & Siquijor Islands. The uninhibited island of Isola de Francisco (formerly the Virgin Island) is famous of its sand bar, where you can walk on it during low tide. Ut disappeares during high tide. The Balicasag Island is much bigger one. You can have snorkelling just beneat the sea. Another island hopping in in Pamilacan, white sand beaches and fish sanctuary is found here."
 transportation:
  - name: boat
    price: '2,500 <span>(12 pax)</span>'
