@@ -1,0 +1,28 @@
+.site-desc
+   
+   &.animate .site-desc-container
+      .title
+         opacity: 0
+         
+      p
+         opacity: 0
+      
+   
+   .site-desc-container
+      @extend .container
+      text-align: center
+      
+      .title
+         margin-top: 1rem
+         text-transform: capitalize
+         opacity: 1
+      
+      p
+         opacity: 1
+         +transition(all .3s ease-in-out .3s)
+         max-width: 900px
+         +display(inline-block)         
+         margin-bottom: 0px
+         font:
+            size: 1.2rem
+            style: italic
